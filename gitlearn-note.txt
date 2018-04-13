@@ -1,0 +1,9 @@
+1、Git删除commit提交的log记录——谨慎选择，有时把敏感文件push到github上，虽然已经删除了但是还是能在commit记录里找到
+删除提交记录中间的提交，git reflog还是能看到
+git rebase --onto <branch name>~<first commit number to remove> <branch name>~<first commit to be kept> <branch name> 
+例如：删除第二、第三个 commit
+git rebase --onto master~3 master~1 master
+git push -f origin master
+
+2、清除缓存区的文件
+git checkout -- <file>
